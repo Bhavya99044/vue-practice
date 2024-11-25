@@ -7,6 +7,11 @@
         tasks:['one', 'two', 'three'],
         link:'http://google.com'
       }
+    },
+    methods:{
+      toggleStatus(){
+        this.status = this.status === 'active'? 'inactive' : 'active'
+      }
     }
   }
 </script>
@@ -26,6 +31,9 @@
   <!-- link tag -->
   <a v-bind:href="link" _blank>click</a>
   <a :href="link" _blank>click</a>
+
+  <!-- toggle button -->
+   <button @click="toggleStatus">{{ status }}</button>
 
 </template>
 
