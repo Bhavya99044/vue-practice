@@ -26,6 +26,23 @@
 
     <h2>{{object.padding}}</h2>
 
+
+    <!-- if you want to use v-for and v-if for codition -->
+     <div v-for="item in items" :key="item.id" >
+      <div v-if="item.name === 'bhavya'">
+       {{item.id}}
+      </div>
+     </div>
+
+     <!-- methods in view -->
+     <h1>bhavya count {{ add() }}</h1>
+
+     <!-- on hover same we can use click for that -->
+     <button v-on:mouseover="SubmitEvent()">click</button>
+     <h1>{{ count }}</h1>
+
+<!-- add multiple events using coma -->
+<button @click="changeEvent(data)">change event</button>
 </template>
 
 <script>
@@ -42,10 +59,30 @@ export default {
       color:'green',
       fontSize:90+'px'
       },
+      items:[
+        {id:1,name:'bhavya'},
+        {id:2,name:'bhavya'},
+        {id:3,name:'bhavya'},
+        {id:4,name:'bhavya'}
+        ],
+      bhavya:'bhavya',  // to use v-if condition in v-for loop we need to define it as a variable and use it in v-if condition.
       object:{
         backgroundColor:'yellow',
         padding:10+'px'
-      }
+      },
+      count:0
+    }
+  },
+  // methods
+  methods:{
+     add(){
+      return 1+2+3;
+    },
+    SubmitEvent(){
+      this.count++;
+    },
+    changeEvent(event){
+      console.log(event)
     }
   }
 }
