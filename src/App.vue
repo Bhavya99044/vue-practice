@@ -1,5 +1,11 @@
 <script>
+    import Bhavya from './components/Bhavya.vue';
+
   export default{
+    //components added here
+    components:{
+      Bhavya
+    },
     data(){
       return{
         message:'hello world',
@@ -17,6 +23,11 @@
 </script>
 
 <template>
+  <Bhavya name="bhavya"/>
+  <Bhavya name="dhwani"/>
+  <Bhavya name="nnnn"/>
+  <!-- <Bhavya :name="vijay"/> -->
+<!-- jo tamre data no variable use karvo hoy to aa rite karvanu -->
   <!-- option api -->
   <!-- /If statement option api -->
   <h1 v-if="status === 'active'">hello</h1>
